@@ -1,0 +1,56 @@
+{% extends 'car_dealer_navbar.html' %} {% block title %}All Cars{% endblock %}
+{% block content %} {% include 'messages.html' %}
+<section>
+	{% if cars %}
+	<h2 class="mt-4 text-white">
+		Hey! <span>{{ request.user.get_full_name }},</span>
+	</h2>
+	<h3>You've added these cars</h3>
+	<div class="mt-4 table-responsive">
+		<table class="table text-center text-white">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Car Name</th>
+					<th scope="col">City</th>
+					<th scope="col">Capacity</th>
+					<th scope="col">
+						Rent(<i class="fa-solid fa-indian-rupee-sign"></i>)
+					</th>
+					<th scope="col">Image</th>
+					<th scope="col">Delete</th>
+					<th scope="col">Edit</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for car in cars %}
+				<tr>
+					<th scope="row">{{ forloop.counter }}</th>
+					<td>{{ car.name }}</td>
+					<td>{{ car.location.city }}</td>
+					<td>{{ car.capacity }}</td>
+					<td>₹ {{ car.rent }}</td>
+					<td>
+						<img
+							src="{{ car.image.url }}"
+							alt="{{ car.name }}"
+							class="img-thumbnail w-50 h-50"
+							 />
+					</td>
+					<td>
+						<a href="{% url 'delete_car' car.id %}" class="btn">Delete</a>
+					</td>
+					<td><a href="{% url 'edit_car' car.id %}" class="btn">Edit</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% else %}
+		<div class="my-5 text-center">
+			<h2>No Cars Added Yet!</h2>
+		</div>
+	</div>
+	{% endif %}
+</section>
+
+{% endblock %}

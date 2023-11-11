@@ -1,0 +1,14 @@
+{% extends 'customer_navbar.html' %} {% block title %}Order Details{% endblock %}{% block content %} {% include 'messages.html' %}
+<section>
+	<div class="mt-5">
+		<h3><span>{{ request.user.get_full_name|title }}</span> Your order for <span>{{ order.car.name }}</span> car is completed.</h3>
+		<b>Your Vehicle Order has been processed!</b>
+		<b>Total Rent:</b><span> ₹ {{ order.rent }}</span><br /><br />
+		<b>Vehicle:</b><span> {{ order.car.name }}</span><br /><br />
+		<b>Duration:</b><span> {{ order.days }} day(s)</span><br /><br />
+		<b>Car Dealer:</b><span> {{ order.car_dealer.car_dealer.get_full_name }}</span><br /><br />
+		<b>Car Dealer's Contact:</b><span> {{ order.car_dealer.phone }}</span><br /><br />
+	</div>
+</section>
+{% endblock %}
+

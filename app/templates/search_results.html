@@ -1,0 +1,48 @@
+{% extends 'customer_navbar.html' %}
+{% block title %}Results{% endblock %}
+{% block content %}
+{% include 'messages.html' %}
+<section>
+    {% if request.session.vehicles_list %}
+    <h1 class="mt-4 text-white">Hey! <span>{{ request.user.get_full_name|title }},</span></h1>
+    <h3>We've found some cars that are available in <span>{{ request.session.vehicles_list.0.city }}</span> city</h3>
+    <div class="table-responsive mt-4">
+        <table class="table text-center text-white">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Car Name</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Capacity</th>
+                    <th scope="col">Rent(<i class="fa-solid fa-indian-rupee-sign"></i>)</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for car in request.session.vehicles_list %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ car.name }}</td>
+                    <td>{{ car.city }}</td>
+                    <td>{{ car.capacity }}</td>
+                    <td>₹ {{ car.rent }}</td>
+                    <td><img src="{{ car.image }}" alt="" class="img-thumbnail w-50 h-50"></td>
+                    <td>
+                        <form action="{% url 'car_rent' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="id" value="{{ car.id }}">
+                            <input type="submit" class="btn" value="Rent Now">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <br>
+        <h2>No Cars Available</h2>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

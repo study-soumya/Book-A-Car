@@ -1,0 +1,137 @@
+CARDEALER DETAILS:
+==================
+1.  Car Dealer First Name: Soumya
+    Car Dealer Last Name: Patra
+    Car Dealer Username: soumya
+    Car Dealer City: Bangalore
+    Password: Sonusoum@69
+
+2.  Car Dealer First Name: Santosh
+    Car Dealer Last Name: Mahani
+    Car Dealer Username: santosh
+    Car Dealer City: Hyderabad
+    Password: Santosh#1994
+
+3.  Car Dealer First Name: Braja Kishore
+    Car Dealer Last Name: Mohanty
+    Car Dealer Username: braja_kishore
+    Car Dealer City: Hyderabad
+    Password: It's me braja92
+    
+4.  Car Dealer First Name: Smruti Ranjan
+    Car Dealer Last Name: Rout
+    Car Dealer Username: smruti_rout
+    Car Dealer City: Bangalore
+    Password: Smruti@1993
+
+5.  Car Dealer First Name: Sudhansu Sekhar
+    Car Dealer Last Name: Patra
+    Car Dealer Username: sid
+    Car Dealer City: Bangalore
+    Password: I am sid@94
+
+6.  Car Dealer First Name: Pravat Kumar
+    Car Dealer Last Name: Patra
+    Car Dealer Username: pravat_kumar
+    Car Dealer City: Hyderabad
+    Password: Pravat.kumar@1992
+
+7.  Car Dealer First Name: Kharabela
+    Car Dealer Last Name: Bairiganjan
+    Car Dealer Username: kharabela
+    Car Dealer City: Pune
+    Password: It's me khara
+
+8.  Car Dealer First Name: Pratik Kumar
+    Car Dealer Last Name: Mohapatra
+    Car Dealer Username: sanu
+    Car Dealer City: Rourkela
+    Password: Sanu@2000
+    
+9.  Car Dealer First Name: Sumit
+    Car Dealer Last Name: Patra
+    Car Dealer Username: sumit
+    Car Dealer City: Rourkela
+    Password: Binu@2005
+
+10. Car Dealer First Name: Pratyush
+    Car Dealer Last Name: Mohanty
+    Car Dealer Username: pratyush
+    Car Dealer City: Pune
+    Password: pratyush_rapper
+
+11. Car Dealer First Name: Anshuman
+    Car Dealer Last Name: Pradhan
+    Car Dealer Username: anshuman
+    Car Dealer City: Bhubaneswar
+    Password: this is ansu
+
+12. Car Dealer First Name: Tapan
+    Car Dealer Last Name: Das
+    Car Dealer Username: tapan
+    Car Dealer City: Bhubaneswar
+    Password: Tapan is nepali
+
+13. Car Dealer First Name: Babuni
+    Car Dealer Last Name: Nayak
+    Car Dealer Username: babuni
+    Car Dealer City: New Delhi
+    Password: babuni.nayak99
+
+14. Car Dealer First Name: Lokanath
+    Car Dealer Last Name: Tripathy
+    Car Dealer Username: lokanath
+    Car Dealer City: New Delhi
+    Password: tripathy.loka@98
+
+15. Car Dealer First Name: Pranaya
+    Car Dealer Last Name: Behera
+    Car Dealer Username: pranaya
+    Car Dealer City: Delhi
+    Password: hi.pranaya@00
+
+
+
+
+
+
+
+
+
+CUSTOMER DETAILS:
+=================
+1.  Customer First Name: Anand
+    Customer Last Name: Dash
+    Customer Username: anand
+    Customer City: Bangalore
+    Password: anand.dash#99
+
+2.  Customer First Name: Abhishek
+    Customer Last Name: Acharya
+    Customer Username: abhishek
+    Customer City: Rourkela
+    Password: abhi.08
+
+3.  Customer First Name: Samar
+    Customer Last Name: Agarwala
+    Customer Username: samar
+    Customer City: Pune
+    Password: agarwala.samar@98
+
+4.  Customer First Name: Sidharth
+    Customer Last Name: Thakur
+    Customer Username: sidharth
+    Customer City: Hyderabad
+    Password: thakur.sidharth97
+
+5.  Customer First Name: Rahul
+    Customer Last Name: Tambe
+    Customer Username: rahul
+    Customer City: Bhubaneswar
+    Password: rahul.tambe99
+
+
+ADMIN:
+======
+1.  Username: admin
+    Password: 123456789

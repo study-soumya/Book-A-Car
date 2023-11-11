@@ -1,0 +1,28 @@
+{% extends 'customer_navbar.html' %} {% block title %}Search Cars{% endblock %}
+{% block content %}
+{% include 'messages.html' %}
+<section class="mb-5">
+	<div class="row d-flex justify-content-center align-items-center text-center">
+		<h1 class="display-5 fw-bold text-white">
+			Welcome to <span>Book A Car</span>
+		</h1>
+		<h3>We offer a wide range of car booking services to meet your needs.</h3>
+		<p>
+			You can enter your city below and see the list of available cars.
+		</p>
+		<form action="{% url 'search_results' %}" method="post" class="d-flex justify-content-center align-items-center text-center g-3">
+			{% csrf_token %}
+			<div class="col-md-6">
+				<input
+					type="text"
+					class="form-control form-control-lg"
+					name="city"
+                    placeholder="Enter Your City eg: Bangalore/Chennai/Pune/Hyderabad" />
+			</div>
+            <div class="">
+                <button class="btn btn-lg ms-2" type="submit">Search Cars</button>
+            </div>
+		</form>
+	</div>
+</section>
+{% endblock %}

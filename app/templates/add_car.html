@@ -1,0 +1,54 @@
+{% extends 'car_dealer_navbar.html' %} {% block title %}Add Car{%endblock %} {% block content %}
+{% include 'messages.html' %}
+<section>
+	<div class="row d-flex justify-content-center align-items-center">
+		<form method="post" enctype="multipart/form-data" class="row">
+			{% csrf_token %}
+			<div class="text-center text-white mb-5">
+				<h2>Hi, <span>{{ request.user.get_full_name|title }}</span></h2>
+                <h3>Add your cars to rent</h3>
+			</div>
+			<div class="col-12 mb-3">
+				<input
+					type="text"
+					class="form-control form-control-lg"
+					name="car_name"
+					placeholder="Name of the Car"
+                    required />
+			</div>
+			<div class="col-md-6 mb-3">
+				<input
+					type="text"
+					class="form-control form-control-lg"
+					name="city"
+					placeholder="City"
+                    required />
+			</div>
+			<div class="col-md-6">
+				<input type="file" class="form-control form-control-lg" name="image"
+                required />
+			</div>
+			<div class="col-md-6">
+				<input
+					type="number"
+					class="form-control form-control-lg"
+					name="capacity"
+					placeholder="Number of Seats"
+                    required />
+			</div>
+			<div class="col-md-6">
+				<input
+					type="number"
+					class="form-control form-control-lg"
+					name="rent"
+					placeholder="Rent (per day)"
+                    required />
+			</div>
+            <div class="">
+                <button type="submit" class="btn btn-lg mt-3 mb-5">Submit</button>
+            </div>
+		</form>
+        
+	</div>
+</section>
+{% endblock %}

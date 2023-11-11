@@ -1,0 +1,51 @@
+{% extends 'car_dealer_navbar.html' %} {% block title %}Earnings{% endblock %}
+{% block content %} {% include 'messages.html' %}
+<section>
+	{% if all_orders %}
+	<h2 class="mt-4 text-white">
+		Hey! <span>{{ request.user.get_full_name }},</span>
+	</h2>
+	<h3>Your total earning is <span>₹ {{ amount }}</span> till now !</h3>
+	<div class="table-responsive mt-4">
+		<table class="table text-center text-white">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Customer Name</th>
+					<th scope="col">Car Name</th>
+					<th scope="col">Days</th>
+					<th scope="col">
+						Rent(<i class="fa-solid fa-indian-rupee-sign"></i>)
+					</th>
+					<th scope="col">Capacity</th>
+					<th scope="col">Image</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for order in all_orders %}
+				<tr>
+					<th scope="row">{{ forloop.counter }}</th>
+					<td>{{ order.user.get_full_name|title }}</td>
+					<td>{{ order.car.name }}</td>
+					<td>{{ order.days }}</td>
+					<td>₹ {{ order.rent }}</td>
+					<td>{{ order.car.capacity }}</td>
+					<td>
+						<img
+							src="{{ order.car.image.url }}"
+							alt=""
+							class="img-thumbnail"
+							style="max-height: 100px" />
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% else %}
+		<div class="my-5 text-center">
+			<h2>No Earnings Yet!</h2>
+		</div>
+	</div>
+	{% endif %}
+</section>
+{% endblock %}

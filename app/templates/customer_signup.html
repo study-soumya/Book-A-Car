@@ -1,0 +1,163 @@
+{% extends 'base.html' %} {% block title %}Customer Registration{% endblock %}
+{% block navbar %}
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="{% url 'index' %}"
+			><i class="fa-solid fa-car"></i> Book A Car</a
+		>
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-bs-toggle="collapse"
+			data-bs-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent"
+			aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ms-auto d-flex">
+				<li class="nav-item">
+					<a class="nav-link active" href="{% url 'index' %}">Home</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+{% endblock %}
+{% block content %}
+{% include 'messages.html' %}
+<section>
+	<div class="row d-flex justify-content-center align-items-center">
+		<div class="col-md-9 col-lg-9 col-xl-6">
+			<img
+				src="/media/images/cars/car22.jpg"
+				class="img-fluid"
+				alt="Sample image" />
+		</div>
+		<div class="col-md-6 col-lg-6 col-xl-6 mt-5 text-light">
+			<form method="post" class="row g-3">
+				{% csrf_token %}
+				<div class="text-center">
+					<h3>Customer Sign Up</h3>
+				</div>
+				<div class="col-md-6">
+					<input
+						type="text"
+						class="form-control form-control-sm"
+						id="first_name"
+						name="first_name"
+						placeholder="First Name"
+						required />
+				</div>
+				<div class="col-md-6">
+					<input
+						type="text"
+						class="form-control form-control-sm"
+						id="last_name"
+						name="last_name"
+						placeholder="Last Name"
+						required />
+				</div>
+				<div class="col-12">
+					<input
+						type="text"
+						class="form-control form-control-sm"
+						id="username"
+						name="username"
+						placeholder="Username"
+						required />
+				</div>
+
+				<div class="col-12">
+					<input
+						type="email"
+						class="form-control form-control-sm"
+						id="email"
+						name="email"
+						placeholder="name@gmail.com"
+						required />
+				</div>
+				<div class="col-md-6">
+					<input
+						type="text"
+						class="form-control form-control-sm"
+						id="phone"
+						name="phone"
+						placeholder="Enter Phone Number"
+						required />
+				</div>
+				<div class="col-md-6">
+					<input
+						type="text"
+						class="form-control form-control-sm"
+						id="inputCity"
+						name="city"
+						placeholder="Enter Your City"
+						required />
+				</div>
+				<div class="col-md-6">
+					<input
+						type="password"
+						class="form-control form-control-sm"
+						id="password"
+						name="password1"
+						placeholder="Enter Password" />
+				</div>
+				<div class="col-md-6">
+					<input
+						type="password"
+						class="form-control form-control-sm"
+						name="password2"
+						id="inputPassword4"
+						placeholder="Confirm Password" />
+				</div>
+
+				<div
+					class="d-flex justify-content-between align-items-center text-center text-lg-start mt-3 pt-2">
+					<button
+						type="submit"
+						class="btn btn-md rounded-pill mt-2"
+						id="form-btn">
+						Sign Up
+					</button>
+					<p class="small fw-bold mt-2 pt-1 mb-0 text-muted">
+						Already have an account?
+						<a href="{% url 'customer_login' %}" class="mx-1" id="page-link"
+							>Login</a
+						>
+					</p>
+				</div>
+
+				<div class="divider d-flex align-items-center my-4">
+					<p class="text-center text-muted fw-bold mx-3 mb-0">OR</p>
+				</div>
+				<p class="lead fw-normal mb-0 me-3 text-center">Sign up with</p>
+				<div class="social-icons text-center">
+					<button type="button" class="btn btn-sm mx-2 rounded-circle">
+						<i class="fab fa-facebook-f"></i>
+					</button>
+
+					<button type="button" class="btn btn-sm mx-2 rounded-circle">
+						<i class="fab fa-google"></i>
+					</button>
+
+					<button type="button" class="btn btn-sm mx-2 rounded-circle">
+						<i class="fab fa-twitter"></i>
+					</button>
+
+					<button type="button" class="btn btn-sm mx-2 rounded-circle">
+						<i class="fab fa-linkedin-in"></i>
+					</button>
+
+					<button type="button" class="btn btn-sm mx-2 rounded-circle">
+						<i class="fab fa-instagram"></i>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

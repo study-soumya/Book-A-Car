@@ -1,0 +1,233 @@
+{% extends 'base.html' %} {% block title %}Rent Cars{% endblock %} {% block navbar %}
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="{% url 'index' %}"
+			><i class="fa-solid fa-car"></i> Book A Car</a
+		>
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-bs-toggle="collapse"
+			data-bs-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent"
+			aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ms-auto d-flex">
+				<li class="nav-item">
+					<a class="nav-link active" href="{% url 'index' %}">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="#cars">Available Cars</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="#about_us">About Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="#services">Services</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="#contact_us">Contact Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="{% url 'car_dealer_login' %}"
+						>Car Dealer Login</a
+					>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+{% endblock %} {% block content %}
+<!-- Hero Section - Image Carousel -->
+<div id="carousel">
+	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="/media/images/cars/car11.jpg" class="w-100" alt="..." />
+			</div>
+			<div class="carousel-item">
+				<img src="/media/images/cars/car38.jpg" class="w-100" alt="..." />
+			</div>
+			<div class="carousel-item">
+				<img src="/media/images/cars/car29.jpeg" class="w-100" alt="..." />
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+</div>
+
+<!-- Cars Section -->
+<section id="cars">
+	<div>
+		<h2 class="service-heading">Welcome<span> To,</span></h2>
+		<h1 class="service-heading">Book A Car</h1>
+		<p class="text-muted">
+			We offer a wide range of car booking services to meet your needs. Whether
+			you're looking to rent a car for a day trip or need a long-term rental,
+			we've got you covered.
+		</p>
+	</div>
+	<div class="row justify-content-center">
+		{% for car in cars %}
+		<div class="col-md-4">
+			<div class="card mt-2">
+				<img
+					class="card-img-top img-fluid"
+					src="/media/{{ car.image }}"
+					alt="{{ car.name }}"
+					height="260px" />
+				<div class="card-body">
+					<h4 class="card-title">{{ car.name }}</h4>
+					<h6 class="card-text">
+						Dealer Name: <b>{{ car.car_dealer|title }}</b>
+					</h6>
+					<h6 class="card-text">Rent: <b>₹ {{ car.rent }}</b> per day</h6>
+					<div class="read">
+						<a href="{% url 'customer_login' %}" class="btn btn-sm">Rent Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% if forloop.counter|divisibleby:3 and not forloop.last %}
+	</div>
+	<div class="row justify-content-center mt-4">{% endif %} {% endfor %}</div>
+</section>
+
+<!-- About Us Section -->
+<section id="about_us">
+	<div class="row d-flex justify-content-center align-items-center">
+		<!-- About Content Column -->
+		<div class="col-md-6">
+			<h1 class="about-heading">About <span>Us</span></h1>
+			<p class="about-content">
+				Welcome to Book A Car, your ultimate destination for hassle-free
+				car rentals. We pride ourselves on providing top-notch car booking
+				services that cater to all your travel needs. With a wide range of
+				vehicles to choose from, we ensure that your journey is comfortable and
+				enjoyable.
+			</p>
+			
+			<p class="about-content">
+				Our commitment to excellence extends beyond just providing reliable
+				vehicles. We strive to make your car rental experience seamless with an
+				easy-to-use booking system and 24/7 customer support. Your satisfaction
+				is our priority, and we are here to assist you every step of the way.
+			</p>
+			<p class="about-content">
+				Join us on this exciting journey and discover the freedom of traveling
+				at your own pace with Book A Car.
+			</p>
+
+			<div class="social-icons">
+				<a href="#" class="btn"><i class="fab fa-meta"></i></a>
+				<a href="#" class="btn"><i class="fab fa-google"></i></a>
+				<a href="#" class="btn"><i class="fab fa-instagram"></i></a>
+				<a href="#" class="btn"><i class="fab fa-twitter"></i></a>
+			</div>
+
+			<div class="read">
+				<a href="#" class="btn btn-md">Read More</a>
+			</div>
+
+			
+		</div>
+		<!-- Car Image Column -->
+		<div class="col-md-6 mt-3 mt-md-5">
+			<img
+				src="/media/images/cars/car10.jpg"
+				class="img-fluid rounded"
+				alt="Car Image" />
+		</div>
+	</div>
+</section>
+<!-- Services Section -->
+<section id="services">
+	<div class="row d-flex justify-content-center align-items-center">
+		<!-- Service Image Column -->
+		<div class="col-md-6 mt-3 mt-md-5">
+			<img
+				src="/media/images/cars/car20.jpg"
+				class="img-fluid rounded"
+				alt="Service Image" />
+		</div>
+		<!-- Service Content Column -->
+		<div class="col-md-6">
+			<h1 class="service-heading">Our <span>Services</span></h1>
+			<p class="service-content">
+				Discover a world of convenience and comfort with our comprehensive range of car booking services. From quick getaways to extended expeditions, Book A Car has you covered every step of the way.
+			</p>
+			<p class="service-content">
+				Choose from our carefully curated fleet, featuring an array of vehicles designed to cater to your unique preferences and requirements. Whether you're seeking an economical option for a city escapade or aiming for luxury during a cross-country adventure, our selection guarantees a smooth and delightful ride.
+			</p>
+			<p class="service-content">
+				Our user-friendly booking platform ensures a hassle-free reservation process, while our dedicated customer support team is available around the clock to assist you at any juncture of your journey. With competitive pricing, transparent terms, and a commitment to excellence, Book A Car is your gateway to stress-free travels.
+			</p>
+			<p class="service-content">
+				Embark on a voyage with confidence, knowing that every mile you drive is backed by our dedication to providing you with top-notch service and a memorable experience.
+			</p>
+
+			<div class="read">
+				<a href="#" class="btn btn-md">Check Out</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Contact Us Section -->
+<section id="contact_us">
+	<div class="row d-flex justify-content-center align-items-center">
+		<!-- Contact Content Column -->
+		<div class="col-md-6">
+			<h1 class="about-heading">Contact <span>Us</span></h1>
+			<p class="about-content">
+				We're here for you, every step of the way. If you have any questions,
+				inquiries, or simply need assistance, don't hesitate to get in touch
+				with our dedicated customer support team. We are available 24/7 to
+				assist you with your car booking needs. Your journey is important to us,
+				and we're available around the clock to cater to your car booking needs.
+			</p>
+
+			<p class="about-content">
+				Whether you're ready to embark on a new
+				adventure or seeking answers to your queries, we're just a call or an
+				email away. At Book A Car, your satisfaction is our priority,
+				and we're committed to making your car rental experience smooth,
+				reliable, and enjoyable. Feel free to reach out to us anytime – we're
+				here to ensure your travel plans unfold effortlessly and with the utmost
+				convenience. Feel free to adjust and customize these texts to match the
+				tone and branding of your website.
+			</p>
+
+			<div class="contact-details">
+				<p><span><i class="fa-solid fa-phone"></i></span>&nbsp;&nbsp;&nbsp;+91 1088 555 000</p>
+				<p><span><i class="fa-solid fa-envelope"></i></span>&nbsp;&nbsp;&nbsp;info@bookacar.com </p>
+				<p><span><i class="fa-solid fa-location-dot"></i></span>&nbsp;&nbsp;&nbsp;Munnekolal, Marathahalli, Kashanvali Village, Bangalore, Karnataka, 560037. </p>
+			</div>
+			
+
+			<div class="read">
+				<a href="#" class="btn btn-md">Learn More</a>
+			</div>
+		</div>
+		<!-- Contact Image Column -->
+		<div class="col-md-6 mt-3 mt-md-0">
+			<img
+				src="/media/images/cars/car14.jpg"
+				class="img-fluid rounded"
+				alt="Contact Image" />
+		</div>
+	</div>
+</section>
+
+{% endblock %}

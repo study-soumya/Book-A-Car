@@ -1,0 +1,26 @@
+{% extends 'customer_navbar.html' %} {% block title %}Car Rent{% endblock %}
+{% block content %}
+{% include 'messages.html' %}
+<section class="mb-5">
+	<div class="row d-flex justify-content-center align-items-center text-center">
+        <h1 class="display-5 fw-bold text-white">Hi, <span>{{ request.user.get_full_name }}</span></h1>
+        <h3>You've selected <span>{{ car.name }}</span> car</h3>
+        <h3>The <span>{{ car.name }}</span> will cost you <span>₹ {{cost_per_day}}</span> per day</h3>
+		<form action="{% url 'order_details' %}" class="d-flex justify-content-center align-items-center text-center g-3" method="post">
+			{% csrf_token %}
+			<div class="col-md-6">
+                <input type="text" class="form-control form-control-lg" placeholder="Enter days you want to rent the {{ car.name }} eg: 2/3/4" name="days" required/>
+            </div>
+			<div>
+                <button
+				class="btn btn-lg ms-2"
+				type="submit">
+				Confirm</button
+			>
+            </div>
+            
+			<input type="hidden" value="{{ car.id }}" name="id" />
+		</form>
+	</div>
+</section>
+{% endblock %}
