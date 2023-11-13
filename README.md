@@ -22,25 +22,35 @@
 
    ```shell
    git clone <repository-url>
+   cd Book-A-Car
    ```
-2. Install the required Python packages:
+2. Make Virtual Environment:
+
+   ```shell
+   python -m venv environment_name
+   cd environment_name
+   command prompt: ./Scripts/activate
+   or git bash: source environment_name/Scripts/activate
+   cd ..
+   ```
+3. Install the required Python packages:
 
    ```shell
    pip install -r requirements.txt
    ```
-3. Configure the database settings in `CarBookingSystem/settings.py`.
-4. Apply migrations:
+4. Configure the database settings in `CarBookingSystem/settings.py`.
+5. Apply migrations:
 
    ```shell
    python manage.py makemigrations
    python manage.py migrate
    ```
-5. Create a superuser for admin access:
+6. Create a superuser for admin access:
 
    ```shell
    python manage.py createsuperuser
    ```
-6. Run the development server:
+7. Run the development server:
 
    ```shell
    python manage.py runserver
@@ -61,7 +71,6 @@
 ### Authentication
 
 * Both Car Dealer and Customer are authenticated by Django's built-in User Authentication method.
-
 
 ### Contributing
 
