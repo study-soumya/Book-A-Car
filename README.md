@@ -21,23 +21,26 @@
 1. Clone the repository:
 
    ```shell
-   git clone <repository-url>
+   git clone https://github.com/study-soumya/Book-A-Car
    cd Book-A-Car
    ```
 2. Make Virtual Environment:
 
    ```shell
-   python -m venv environment_name
-   cd environment_name
-   command prompt: ./Scripts/activate
-   or git bash: source environment_name/Scripts/activate
-   cd ..
+   python -m venv env
    ```
-3. Install the required Python packages:
+3. Activate Environment
 
    ```shell
-   pip install -r requirements.txt
+   Windows: ./env/Scripts/activate
+   Bash: source env/Scripts/activate
    ```
+4. Install the required Python packages:
+
+```shell
+   pip install -r requirements.txt
+```
+
 4. Configure the database settings in `CarBookingSystem/settings.py`.
 5. Apply migrations:
 
@@ -86,8 +89,8 @@ Please ensure your code follows best practices and includes appropriate tests.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+### Watch Live: [Book A Car](https://soumyapatra.pythonanywhere.com/)
+
 ### Website Images
 
-![1699734715136](image/README/1699734715136.png)
-
-![1699734759653](image/README/1699734759653.png)![1699734767073](image/README/1699734767073.png)![1699734774563](image/README/1699734774563.png)![1699734800057](image/README/1699734800057.png)![1699734805835](image/README/1699734805835.png)![1699734810685](image/README/1699734810685.png)![1699734815086](image/README/1699734815086.png)
+![1699734715136](image/README/1699734715136.png)![1699734759653](image/README/1699734759653.png)![1699734767073](image/README/1699734767073.png)![1699734774563](image/README/1699734774563.png)![1699734800057](image/README/1699734800057.png)![1699734805835](image/README/1699734805835.png)![1699734810685](image/README/1699734810685.png)![1699734815086](image/README/1699734815086.png)
